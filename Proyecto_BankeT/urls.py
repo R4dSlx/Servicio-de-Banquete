@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Proyecto_BankeT.views import hija1
+from Proyecto_BankeT.views import hija2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('hija1/', hija1),
+    path('hija2/', hija2),
+
 ]
