@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Proyecto_BankeT.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["C:/Proyecto_BankeT/Proyecto_BankeT/Proyecto_BankeT/Plantillas/"],
+        'DIRS': ["C:/Proyecto_BankeT_PostgreSQL/Proyecto_BankeT/Plantillas/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
