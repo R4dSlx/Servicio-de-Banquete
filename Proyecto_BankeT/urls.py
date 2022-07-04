@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from Proyecto_BankeT.views import hija1
 from Proyecto_BankeT.views import hija2
+from zeus.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home),
     path('hija1/', hija1),
     path('hija2/', hija2),
 
