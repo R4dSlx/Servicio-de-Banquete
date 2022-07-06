@@ -15,14 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth.views import LoginView
+from django.contrib.auth import views as auth_views
 from Proyecto_BankeT.views import hija1
 from Proyecto_BankeT.views import hija2
+from Proyecto_BankeT.views import index
+from Proyecto_BankeT.views import register
 from zeus.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
     path('hija1/', hija1),
     path('hija2/', hija2),
+    path('register/', register),
+    path('', LoginView.as_view(template_name='index.html')),
+    path('comidas', home),
 
 ]
