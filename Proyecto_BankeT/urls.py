@@ -17,10 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import views as auth_views
-from Proyecto_BankeT.views import hija1
-from Proyecto_BankeT.views import hija2
-from Proyecto_BankeT.views import index
-from Proyecto_BankeT.views import register
+from Proyecto_BankeT.views import *
+from . import views 
 from zeus.views import *
 
 urlpatterns = [
@@ -28,7 +26,14 @@ urlpatterns = [
     path('hija1/', hija1),
     path('hija2/', hija2),
     path('register/', register),
-    path('', LoginView.as_view(template_name='index.html')),
-    path('comidas', home),
+    path('gestion', home, name="gestioncomidas"),
+    path('', views.inicio , name='Doctor'),
+    path('contacto/', views.contacto,  name="contacto"),
+    path('acerca/', views.acerca,  name="acerca"),
+
+
+    # AUTENTICACION
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name= 'login'),
+    path('logout/', auth_views.LogoutView.as_view(), name= 'logout'),
 
 ]

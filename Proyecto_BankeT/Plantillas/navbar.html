@@ -1,0 +1,22 @@
+<div>
+	{% url 'Doctor' as Doctor_url %}
+	<span>{% if request.path == Doctor_url %}INICIO{% else %}<a href="{% url 'Doctor' %}">INICIO</a>{% endif %}</span>
+	<span><a href="{% url 'gestioncomidas' %}">BANQUETES</a></span>
+	{% url 'contacto' as contacto_url %}
+	<span>{% if request.path == contacto_url %}CONTACTO{% else %}<a href="{% url 'contacto' %}">CONTACTO</a>{% endif %}</span>
+	{% url 'acerca' as acerca_url %}
+	<span>{% if request.path == acerca_url %}ACERCA{% else %}<a href="{% url 'acerca' %}">ACERCA</a>{% endif %}</span>
+	{% url 'login' as login_url %}
+	<span>{% if request.path == login_url %}LOGIN{% else %}<a href="{% url 'login' %}">LOGIN</a>{% endif %}</span>
+	<span style="float:right">
+		{% if user.is_authenticated %}
+		<span>¡Que hay de nuevo, {{user.username}}!</span>
+		<span><a href="{% url 'logout' %}">Cerrar sesión</a></span>
+		{% else %}
+		<span><a href="{% url 'login' %}">Inicia Sesión</a></span>
+		{% endif %}
+	</span>
+ 
+
+
+</div>

@@ -8,3 +8,5 @@ def home(request):
 	comidaslistadas = comidas.objects.all()
 	return render(request, "gestioncomidas.html", {"comidas": comidaslistadas})
 
+
+

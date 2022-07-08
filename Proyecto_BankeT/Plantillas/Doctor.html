@@ -4,14 +4,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{% block title %} {% endblock %}</title>
+	<title>{% block title %} Banke-T | Inicio {% endblock %}</title>
 	<link rel='stylesheet' type='text/css' href='{% static "css/Navegacion.css" %}'/>
 </head>
 <body>
-{% include "Navegacion.html" %}
-<h1 style="color: olive;">Servicio de Banquetes</h1>
-
-</br>
+{% include "navbar.html" %}
 {% block content %} 
 {% endblock %}
 <p>Este es el pie de página</p>

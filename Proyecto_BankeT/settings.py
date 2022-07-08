@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ["C:/Proyecto_BankeT_PostgreSQL/Proyecto_BankeT/Plantillas/"],
-        'APP_DIRS': True,
+        'APP_DIRS': ["C:/Proyecto_BankeT_PostgreSQL/zeus/templates/"],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -130,4 +130,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'Proyecto_BankeT/static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = reverse_lazy('comidas')
+
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = reverse_lazy('Doctor')
+LOGOUT_REDIRECT_URL = "Doctor"

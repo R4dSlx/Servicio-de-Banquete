@@ -6,6 +6,10 @@ from django.contrib.auth.forms import UserCreationForm
 
 # Esto es una vista: 
 
+def inicio(request):
+	print(request.user)
+	return render(request, "Doctor.html", {})
+
 def register(request):
 	if request.method == 'POST':
 		form = UserCreationForm(request.POST)
@@ -22,9 +26,15 @@ def register(request):
 def hija1(request):
 	return render(request, "P1.html", {})
 
+def contacto(request):
+	return render(request, "contacto.html", {})
+
+def acerca(request):
+	return render(request, "acerca.html", {})
+
 def hija2(request):
 	return render(request, "P2.html", {})
 
-def index(request):
-	return render(request, "index.html", {})
+def login(request):
+	return render(request, "login.html", {})
 
