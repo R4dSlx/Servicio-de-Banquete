@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banke-T | Registro</title>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-12 col-md-6 offset-md-3">
+
+        <div class="form-group">
+            <form method ="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                <button type="submit" id="submit">Iniciar</button>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+</body>
+</html>

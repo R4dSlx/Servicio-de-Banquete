@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 class comidas(models.Model):
     nombre = models.CharField(max_length=30)
-    precio = models.FloatField()
+    precio = models.PositiveSmallIntegerField()
 
     class meta:
         verbose_name = 'comida'

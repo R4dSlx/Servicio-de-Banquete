@@ -1,1 +1,0 @@
-console.log("El documento se ha cargado correctamente")
