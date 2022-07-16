@@ -20,24 +20,18 @@ from django.contrib.auth import views as auth_views
 from Proyecto_BankeT.views import *
 from . import views 
 from zeus.views import *
+from Cliente.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hija1/', hija1),
     path('hija2/', hija2),
-    path('register/', register),
+    path('register/', register_request, name="register"),
+    path('login/', login_request, name="login"),
     path('gestion', home, name="gestioncomidas"),
     path('', views.inicio , name='Doctor'),
     path('contacto/', views.contacto,  name="contacto"),
     path('acerca/', views.acerca,  name="acerca"),
-    path('Cliente/', include('django.contrib.auth.urls')),
-    path('Cliente/', include('Cliente.urls')),
-
-
-
-
-    # AUTENTICACION
-    path('accounts/login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name= 'login'),
-    path('logout/', auth_views.LogoutView.as_view(), name= 'logout'),
+    path("logout", logout_request, name="logout"),
 
 ]

@@ -1,43 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Banke-T | Login</title>
-</head>
-<body>
-<div class="row">
-    <div class="col-md-12 col-md-6 offset-md-3">
+{% extends "Doctor.html" %}
 
-        <div class="card">
-            <div class="card-body">
-                <h2>Ingresa tus credenciales</h2>
-                <hr>
-                <form action="" method="post">
+{% block content %}
 
-                    {% csrf_token %}
-                    {{ form }}
+{% load crispy_forms_tags %}
 
-                <button type="submit" id="submit">Iniciar</button></form>
-
-
-                </form>
-
-                <h2>¿No tienes cuenta? Créala acá prro</h2>
-                <button type="register" id="register">Crear Cuenta</button></form>
-
-
-            </div>
-
-
-
-        </div>
-
-
-
-
+{% if messages %}
+{% for message in messages %}
+{% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+    <div class="alert alert-primary" role="alert">
+    {{ message }}
     </div>
+{% endif %}
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <div class="alert alert-success" role="alert">
+    {{ message }}
+    </div>
+{% endif %}
+{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <div class="alert alert-danger" role="alert">
+    {{ message }}
+    </div>
+    {% endif %}
+{% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+    <div class="alert alert-warning" role="alert">
+    {{ message }}
+    </div>
+{% endif %}
+{% endfor %}
+{% endif %}
 
+<!--Login-->
+
+<div class="container py-5">
+  <h1>Inicio de Sesión</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
+  </form>
+  <p class="text-center">¿No tienes una cuenta? <a href="{% url 'register' %}">Créate una!</a>.</p>
 </div>
-</body>
-</html>
+
+
+
+
+{% endblock %}

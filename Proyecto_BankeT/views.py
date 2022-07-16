@@ -10,19 +10,6 @@ def inicio(request):
 	print(request.user)
 	return render(request, "Doctor.html", {})
 
-def register(request):
-	if request.method == 'POST':
-		form = UserCreationForm(request.POST)
-		if form.is_valid():
-			username = form.cleaned_data['username']
-			message.success(request, f'Usuario {username} creado')
-	else:
-		form = UserCreationForm()
-
-	context = {'form' : form }
-
-	return render(request, 'register.html', context)
-
 def hija1(request):
 	return render(request, "P1.html", {})
 
@@ -35,6 +22,4 @@ def acerca(request):
 def hija2(request):
 	return render(request, "P2.html", {})
 
-def login(request):
-	return render(request, "login.html", {})
 
