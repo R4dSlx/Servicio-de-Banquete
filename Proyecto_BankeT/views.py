@@ -8,10 +8,10 @@ from django.contrib.auth.forms import UserCreationForm
 
 def inicio(request):
 	print(request.user)
-	return render(request, "Doctor.html", {})
+	return render(request, "P1.html", {})
 
 def hija1(request):
-	return render(request, "P1.html", {})
+	return render(request, "P1W.html", {})
 
 def contacto(request):
 	return render(request, "contacto.html", {})

@@ -1,9 +1,5 @@
 {% extends "Doctor.html" %}
 
-{% block content %}
-
-{% load crispy_forms_tags %}
-
 {% if messages %}
 {% for message in messages %}
 {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
@@ -28,6 +24,11 @@
 {% endif %}
 {% endfor %}
 {% endif %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
 
 <!--Login-->
 

@@ -2,7 +2,19 @@
 
 {% block title %} Banke-T | Inicio {% endblock %}
 
-{% block content %} 
-<p>Este contenido forma parte de la plantilla hija 1</p>
+{% block background %}{% load static %}{% static 'img/portada.jpg' %}{% endblock %}
 
+ {% block headers %}
+    <h1>"...del mar a su boca"</h1>
+    <span class="subheading">Deléitese sin precedentes...</span><br><br>
+
+     <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-3x fa-stack-2x"></i>
+                    <i class="fa fa-spoon fa-stack-2x fa-inverse"></i>
+                  </span>
+                </a>
+
+
+     <button class="btn btn-primary" type="submit">Ver Promos</button>
 {% endblock %}
