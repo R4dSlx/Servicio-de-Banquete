@@ -1,11 +1,14 @@
 {% extends "Doctor.html" %}
 
-{% block content %} 
+
 
 {% load crispy_forms_tags %}
+{% block background %}{% load static %}{% static 'img/registro.jpg' %}{% endblock %}
 
 
-<!--Register--> 
+
+<!--Register-->
+{% block headers %}
 <div class="container py-5">
 	<h1>Registro</h1>
 	<form method="POST">
@@ -16,29 +19,5 @@
 	<p class="text-center">Si ya tienes una cuenta, entonces <a href="{% url 'login' %}">inicia sesión!</a></p>
 </div>
 
-{% if messages %}
-{% for message in messages %}
-{% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
-    <div class="alert alert-primary" role="alert">
-    {{ message }}
-    </div>
-{% endif %}
-{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-    <div class="alert alert-success" role="alert">
-    {{ message }}
-    </div>
-{% endif %}
-{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
-    <div class="alert alert-danger" role="alert">
-    {{ message }}
-    </div>
-    {% endif %}
-{% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
-    <div class="alert alert-warning" role="alert">
-    {{ message }}
-    </div>
-{% endif %}
-{% endfor %}
-{% endif %}
 
 {% endblock %}
