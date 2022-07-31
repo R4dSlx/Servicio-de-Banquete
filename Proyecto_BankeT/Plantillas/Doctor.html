@@ -85,12 +85,12 @@
 
 
     <!--contenido-->
-    {% block content %} {% endblock %}
+    {% block content %}{% endblock %}
     {% load static %}
 
 
 
-{% if request.path != "/" %} <hr> {% endif %}
+{% if request.path == "/" %}
     <!-- Pié de página -->
     <footer>
       <div class="container">
@@ -119,6 +119,7 @@
         </div>
       </div>
     </footer>
+    {% endif %}
 
     <!-- Bootstrap y Javascripts -->
     <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>

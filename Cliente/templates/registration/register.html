@@ -1,23 +1,14 @@
 {% extends "Doctor.html" %}
-
-
-
 {% load crispy_forms_tags %}
 {% block background %}{% load static %}{% static 'img/registro.jpg' %}{% endblock %}
 
-
-
 <!--Register-->
 {% block headers %}
-<div class="container py-5">
-	<h1>Registro</h1>
-	<form method="POST">
-		{% csrf_token %}
-		{{ register_form|crispy }}                    
-		<button class="btn btn-primary" type="submit">Registrarse</button>
-	</form>
-	<p class="text-center">Si ya tienes una cuenta, entonces <a href="{% url 'login' %}">inicia sesión!</a></p>
-</div>
-
-
+<h1>Registro</h1>
+<form method="POST">
+{% csrf_token %}
+{{ register_form|crispy }}<button class="btn btn-primary" type="submit">Registrarse</button>
+</form>
+    <p class="text-center">Si ya tienes una cuenta, entonces <a href="{% url 'login' %}">inicia sesión!</a></p>
 {% endblock %}
+
